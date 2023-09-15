@@ -4,7 +4,7 @@
 INSTALL_PATH="/app/whisper.cpp"
 
 # Clone the Whisper C++ repository
-git clone https://github.com/ggerganov/whisper.cpp.git $INSTALL_PATH
+git clone https://github.com/Unsleeping/whisper.cpp.git $INSTALL_PATH
 
 # Navigate to the Whisper directory
 cd $INSTALL_PATH
