@@ -3,11 +3,10 @@
 echo "-----> Installing Whisper and FFmpeg"
 
 # Clone Whisper C++ repository (replace with your repository URL)
-git clone https://github.com/ggerganov/whisper.cpp.git 
-/app/whisper-cpp
+git clone https://github.com/ggerganov/whisper.cpp.git
 
 # Navigate to the Whisper directory
-cd /app/whisper-cpp
+cd whisper.cpp
 
 # Download one of the Whisper models converted in ggml format
 bash ./models/download-ggml-model.sh base.en
