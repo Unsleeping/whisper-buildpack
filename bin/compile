@@ -1,12 +1,13 @@
 #!/bin/sh
 
-echo "-----> Installing Whisper and FFmpeg"
+# Define where you want to install Whisper
+INSTALL_PATH="/app/whisper.cpp"
 
-# Clone Whisper C++ repository (replace with your repository URL)
-git clone https://github.com/ggerganov/whisper.cpp.git
+# Clone the Whisper C++ repository
+git clone https://github.com/ggerganov/whisper.cpp.git $INSTALL_PATH
 
 # Navigate to the Whisper directory
-cd whisper.cpp
+cd $INSTALL_PATH
 
 # Download one of the Whisper models converted in ggml format
 bash ./models/download-ggml-model.sh base.en
@@ -14,5 +15,9 @@ bash ./models/download-ggml-model.sh base.en
 # Build and install Whisper (replace with your actual build steps)
 make
 
-echo "-----> Done!"
+# Clean up build artifacts if necessary
+# ...
+
+# Create a profile.d script to set environment variables if needed
+echo 'export PATH="$PATH:/app/whisper.cpp"' > /app/.profile.d/whisper.sh
 
