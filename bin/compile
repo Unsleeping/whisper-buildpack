@@ -14,9 +14,5 @@ bash ./models/download-ggml-model.sh base.en
 # Build and install Whisper (replace with your actual build steps)
 make
 
-# Install FFmpeg 
-wget https://ffmpeg.org/releases/ffmpeg-3.4.13.tar.gz
-tar -xzvf ffmpeg-3.4.13.tar.gz -C /app
-
 echo "-----> Done!"
 
