@@ -1,0 +1,23 @@
+#!/bin/sh
+
+echo "-----> Installing Whisper and FFmpeg"
+
+# Clone Whisper C++ repository (replace with your repository URL)
+git clone https://github.com/ggerganov/whisper.cpp.git 
+/app/whisper-cpp
+
+# Navigate to the Whisper directory
+cd /app/whisper-cpp
+
+# Download one of the Whisper models converted in ggml format
+bash ./models/download-ggml-model.sh base.en
+
+# Build and install Whisper (replace with your actual build steps)
+make
+
+# Install FFmpeg 
+wget https://ffmpeg.org/releases/ffmpeg-3.4.13.tar.gz
+tar -xzvf ffmpeg-3.4.13.tar.gz -C /app
+
+echo "-----> Done!"
+
