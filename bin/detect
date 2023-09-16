@@ -1,11 +1,3 @@
 #!/bin/sh
-
-# Check if the Whisper directory is present
-if [ -d "/app/whisper.cpp" ]; then
-    echo "Whisper C++ detected"
-    exit 0
-else
-    echo "Whisper C++ not detected"
-    exit 1
-fi
+exit 0
 
