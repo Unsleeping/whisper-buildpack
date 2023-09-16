@@ -4,20 +4,31 @@
 INSTALL_PATH="/app/whisper.cpp"
 
 # Clone the Whisper C++ repository
-git clone https://github.com/Unsleeping/whisper.cpp.git $INSTALL_PATH
+git clone https://github.com/Unsleeping/whisper.cpp.git "$INSTALL_PATH" || {
+    echo "Failed to clone Whisper repository."
+    exit 1
+}
 
 # Navigate to the Whisper directory
-cd $INSTALL_PATH
+cd "$INSTALL_PATH" || {
+    echo "Failed to navigate to Whisper directory."
+    exit 1
+}
 
 # Download one of the Whisper models converted in ggml format
-bash ./models/download-ggml-model.sh base.en
+bash ./models/download-ggml-model.sh base.en || {
+    echo "Failed to download Whisper model."
+    exit 1
+}
 
 # Build and install Whisper (replace with your actual build steps)
-make
+# You may need to add specific build commands here.
+# For example, if Whisper requires cmake:
+# cmake . && make
+# Ensure you handle any build errors gracefully.
 
 # Clean up build artifacts if necessary
 # ...
 
 # Create a profile.d script to set environment variables if needed
 echo 'export PATH="$PATH:/app/whisper.cpp"' > /app/.profile.d/whisper.sh
-
